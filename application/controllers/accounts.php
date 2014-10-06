@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends MY_Controller {
+class Accounts extends MY_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -17,8 +17,22 @@ class Home extends MY_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{	
+
+	public function __construct(){
+		parent :: __construct();
+	}
+
+	public function registro(){	
+		//Datos del formulario
+		$this->data->nombre  = $this->input->post('nombre');
+		$this->data->email  = $this->input->post('email');
+		$this->data->reemail  = $this->input->post('reemail');
+		$this->password  = $this->input->post('password');
+		
+		$this->data->dia  = $this->input->post('dia');
+		$this->data->mes  = $this->input->post('mes');
+		$this->data->ano  = $this->input->post('ano');
+
 		$this->load->view('registro');
 	}
 }
