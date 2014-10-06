@@ -1,5 +1,6 @@
 <?php
 
 $this->load->view('layouts/head');
-$this->load->view('layouts/container');
-$this->load->view('layouts/js_included');
+$this->load->view('layouts/nav');
+$this->load->view('layouts/content');
+$this->load->view('layouts/footer');
