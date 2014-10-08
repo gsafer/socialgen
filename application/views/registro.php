@@ -45,32 +45,32 @@
                         <form role="form" action="<?=base_url()?>accounts/registro" name="registro" method="POST" class="col-md-12 clearfix">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                    <input class="form-control<?if($e_type == 'EMAIL'){ echo ' error';}?>" placeholder="E-mail" name="email" type="email" value="<?if(isset($email)){echo $email;}?>" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Repite el e-mail" name="reemail" type="email" value="">
+                                    <input class="form-control<?if($e_type == 'EMAIL'){ echo ' error';}?>" placeholder="Repite el e-mail" name="reemail" type="email" value="">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Nombre" name="nombre" type="text" value="">
+                                    <input class="form-control<?if($e_type == 'NOMBRE'){ echo ' error';}?>" placeholder="Nombre" name="nombre" type="text" value="<?if(isset($nombre)){echo $nombre;}?>">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Apellido" name="apellido" type="apellido" value="">
+                                    <input class="form-control<?if($e_type == 'NOMBRE'){ echo ' error';}?>" placeholder="Apellido" name="apellido" type="apellido" value="<?if(isset($apellido)){ echo $apellido;}?>">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input class="form-control<?if($e_type == 'PASS'){ echo ' error';}?>" placeholder="Password" name="password" type="password" value="">
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-2">
                                         <label>Edad: </label>
                                     </div>
                                     <div class="form-group col-md-3">
-                                        <input class="form-control" placeholder="DD" name="dia" type="text" value="">
+                                        <input class="form-control<?if($e_type == 'EDAD'){ echo ' error';}?>" placeholder="DD" name="dia" type="text" value="<?if(isset($dia)){echo $dia;}?>">
                                     </div>
                                     <div class="form-group col-md-3">
-                                        <input class="form-control" placeholder="MM" name="mes" type="text" value="">
+                                        <input class="form-control<?if($e_type == 'EDAD'){ echo ' error';}?>" placeholder="MM" name="mes" type="text" value="<?if(isset($mes)){echo $mes;}?>">
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <input class="form-control" placeholder="AAAA" name="ano" type="text" value="">
+                                        <input class="form-control<?if($e_type == 'EDAD'){ echo ' error';}?>" placeholder="AAAA" name="ano" type="text" value="<?if(isset($ano)){echo $ano;}?>">
                                     </div>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->

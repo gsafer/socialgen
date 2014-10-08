@@ -19,7 +19,7 @@ class Home extends MY_Controller {
 	 */
 	public function index()
 	{	
-		$this->load->view('registro');
+		$this->load->view('registro', $this->data);
 	}
 }
 

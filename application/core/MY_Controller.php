@@ -9,6 +9,9 @@ class MY_Controller extends CI_Controller {
      */
     public function __construct($alias = null) {
         parent :: __construct();
+
+        //Control de errores
+        $this->data->e_type = "NONE";
     }
 
 }
