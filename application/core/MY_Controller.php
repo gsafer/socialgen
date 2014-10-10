@@ -14,4 +14,9 @@ class MY_Controller extends CI_Controller {
         $this->data->e_type = "NONE";
     }
 
+    public function goHome(){
+    	header("location: " . base_url());
+    	die;    	
+    }
+
 }

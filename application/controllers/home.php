@@ -19,7 +19,13 @@ class Home extends MY_Controller {
 	 */
 	public function index()
 	{	
-		$this->load->view('registro', $this->data);
+		$this->data->login = $this->session->all_userdata();
+		if(isset($this->data->login['logged_in']) && $this->data->login['logged_in'] === true){
+			$this->load->view('home', $this->data);
+		} else {
+			$this->load->view('login', $this->data);
+		}
+		
 	}
 }
 

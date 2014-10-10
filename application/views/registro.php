@@ -45,6 +45,9 @@
                         <form role="form" action="<?=base_url()?>accounts/registro" name="registro" method="POST" class="col-md-12 clearfix">
                             <fieldset>
                                 <div class="form-group">
+                                    <input class="form-control<?if($e_type == 'NICK'){ echo ' error';}?>" placeholder="Nick" name="nick" type="nick" value="<?if(isset($nick)){echo $nick;}?>" autofocus>
+                                </div>
+                                <div class="form-group">
                                     <input class="form-control<?if($e_type == 'EMAIL'){ echo ' error';}?>" placeholder="E-mail" name="email" type="email" value="<?if(isset($email)){echo $email;}?>" autofocus>
                                 </div>
                                 <div class="form-group">
@@ -75,6 +78,8 @@
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <button class="btn btn-lg btn-success btn-block" value="Regístrate">Regístrate</button>
+                                <br>
+                                <p>Al pulsar el botón "Regístrate" estas aceptando nuestras políticas de uso.</p>
                             </fieldset>
                         </form>
                     </div>

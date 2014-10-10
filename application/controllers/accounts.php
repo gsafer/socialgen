@@ -22,6 +22,17 @@ class Accounts extends MY_Controller {
 		parent :: __construct();
 	}
 
+	public function login(){
+		$this->data->error = false;
+
+		$usuario->nick  = $this->input->post('nick');
+		$usuario->password  = $this->input->post('password');
+
+		$this->load->library("users_lib");
+		$this->users_lib->login($usuario);
+		$this->goHome();
+	}
+
 	public function registro(){	
 		$this->data->error = false;
 
@@ -38,6 +49,10 @@ class Accounts extends MY_Controller {
 		$this->data->ano  = $this->input->post('ano');
 
 		//Comprobamos nick
+		if(strlen($this->data->nick) < 3 || strlen($this->data->nick) > 10){
+			$this->data->error = true;
+			$this->data->e_type = 'NICK';
+		}
 
 		//Comprobamos nombre y apellido
 		if (strlen($this->data->nombre) < 3 || strlen($this->data->nombre) > 30 || strlen($this->data->apellido) < 3 || strlen($this->data->apellido) > 30) {
@@ -46,7 +61,7 @@ class Accounts extends MY_Controller {
 		}
 
 		//Comprobamos email
-		if (!filter_var($this->data->email, FILTER_VALIDATE_EMAIL)) {
+		if (!filter_var($this->data->email, FILTER_VALIDATE_EMAIL) || $this->data->email !== $this->data->reemail) {
 		    $this->data->error = true;
 			$this->data->e_type = 'EMAIL';
 		}
@@ -66,6 +81,9 @@ class Accounts extends MY_Controller {
 		$this->data->mes = ltrim($this->data->mes, '0');
 		$this->data->ano = ltrim($this->data->ano, '0');
 
+		$edad = $this->data->dia  . "-" . $this->data->mes . "-" . $this->data->ano;
+		$this->data->edad = date('Y-m-d', strtotime($edad));
+
 		if (!filter_var($this->data->dia, FILTER_VALIDATE_INT, $range_dia) 
 			|| !filter_var($this->data->mes, FILTER_VALIDATE_INT, $range_mes) 
 			|| !filter_var($this->data->ano, FILTER_VALIDATE_INT, $range_ano)) {
@@ -78,10 +96,9 @@ class Accounts extends MY_Controller {
 			$this->load->library("users_lib");
 			$this->users_lib->registro($this->data);
 			$this->load->view('registro', $this->data);
-			die;
+		} else {
+			$this->load->view('registro', $this->data);
 		}
-
-		$this->load->view('registro', $this->data);
 	}
 }
 
