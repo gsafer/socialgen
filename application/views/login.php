@@ -54,8 +54,15 @@
                                 <button class="btn btn-lg btn-success btn-block" value="Regístrate">Entrar</button>
                             </fieldset>
                         </form>
+                        <br/>
+
+                        <p>Si no recuerdas tu contraseña pulsa <a href="<?=base_url() . 'accounts/recoverypass'?>">recordar contraseña</a></p>
                     </div>
                 </div>
+
+                <br/>
+
+                <p>Si no tienes cuenta puedes crear una nueva en el siguiente enlace de <a href="<?=base_url() . 'accounts/registro'?>">registro</a></p>
             </div>
         </div>
     </div>

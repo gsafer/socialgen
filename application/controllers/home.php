@@ -25,7 +25,6 @@ class Home extends MY_Controller {
 		} else {
 			$this->load->view('login', $this->data);
 		}
-		
 	}
 }
 

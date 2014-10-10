@@ -22,6 +22,16 @@ class Accounts extends MY_Controller {
 		parent :: __construct();
 	}
 
+	public function logout(){
+		$this->data->login = $this->session->all_userdata();
+		if(isset($this->data->login['logged_in']) && $this->data->login['logged_in'] === true){
+			$this->session->sess_destroy();
+			$this->goHome();
+		} else {
+			show_404();
+		}
+	}
+
 	public function login(){
 		$this->data->error = false;
 
@@ -95,7 +105,7 @@ class Accounts extends MY_Controller {
 			//Guardamos el registro en bd
 			$this->load->library("users_lib");
 			$this->users_lib->registro($this->data);
-			$this->load->view('registro', $this->data);
+			$this->load->view('login', $this->data);
 		} else {
 			$this->load->view('registro', $this->data);
 		}
