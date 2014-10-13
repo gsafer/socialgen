@@ -346,5 +346,13 @@ table.dataTable thead .sorting:after {
 
 /*CUSTOM*/
 .error{
-    border: 1px solid #FA5858;
+    border: 2px solid #FA5858;
+}
+
+.accounts p{
+    text-align: center;
+}
+
+.dNone{
+    display: none;
 }

@@ -12,6 +12,8 @@ class MY_Controller extends CI_Controller {
 
         //Control de errores
         $this->data->e_type = "NONE";
+        $this->data->error = false;
+        $this->checkLogin();
     }
 
     public function goHome(){
@@ -19,4 +21,15 @@ class MY_Controller extends CI_Controller {
     	die;    	
     }
 
+    public function checkLogin(){
+        $cookie = $this->cookie->get_cookie('socialgen_login');
+
+        if(!$cookie){
+            $this->cookie->set_cookie('socialgen_login', true);
+            die("si");
+        } else {
+            die("no");
+        }
+    }
+     
 }
