@@ -70,13 +70,7 @@ class Users_lib {
 
 		if($usuario_test == true){
 			$usuario_data = $this->CI->users_model->getUserLogin($usuario, true);
-			$newdata = array(
-                   'nick'  => $usuario_data->nick,
-                   'email'     => $usuario_data->email,
-                   'logged_in' => TRUE
-               );
-
-			$this->CI->session->set_userdata($newdata);
+			$this->CI->setSessionsLogin($usuario_data);
 			return true;
 		} else {
 			return false;

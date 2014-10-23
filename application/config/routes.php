@@ -41,6 +41,9 @@
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 
+$route['profile/(:any)'] = "accounts/profile/$1";
+$route['foros/foro-general'] = "foros/general";
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

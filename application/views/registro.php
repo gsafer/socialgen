@@ -7,7 +7,7 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Registrate en socialgen.com</h3>
+                        <h3 class="panel-title"><?=_('Registrate en');?> socialgen.com</h3>
                     </div>
                     <div class="panel-body">
                             <?
@@ -18,25 +18,25 @@
                             <?
                                     switch($e_type){
                                         case 'EMAILCHECK':
-                                            echo "El <b>email</b> está ocupado, elige otro.";
+                                            echo _("El email está ocupado, elige otro.");
                                         break;
                                         case 'NICKCHECK':
-                                            echo "El <b>nick</b> está ocupado, elige otro.";
+                                            echo _("El nick está ocupado, elige otro.");
                                         break;                                    
                                         case 'NICK':
-                                            echo "El <b>nick</b> debe contener entre 3 y 10 caracteres alfanuméricos.";
+                                            echo _("El nick debe contener entre 3 y 10 caracteres alfanuméricos.");
                                         break;
                                         case 'EMAIL':
-                                            echo "No has escrito un <b>email</b> valido, intentalo con otra dirección.";
+                                            echo _("No has escrito un email valido, intentalo con otra dirección.");
                                         break;
                                         case 'NOMBRE':
-                                            echo "En el <b>nombre</b> y el <b>apellido</b>, sólo se permiten letras de la A-Z.";
+                                            echo _("En el nombre y el apellido, sólo se permiten letras de la A-Z.");
                                         break;
                                         case 'PASS':
-                                            echo "La <b>contraseña</b> debe contener entre 5 y 12 caracteres.";
+                                            echo _("La contraseña debe contener entre 5 y 12 caracteres.");
                                         break;
                                         case 'EDAD':
-                                            echo "No has introducido tu <b>fecha de nacimiento</b> correctamente.";
+                                            echo _("No has introducido tu fecha de nacimiento correctamente.");
                                         break;
                                     }
                             ?>

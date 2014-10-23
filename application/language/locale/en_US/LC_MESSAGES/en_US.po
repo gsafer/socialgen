@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Socialgen\n"
+"POT-Creation-Date: 2014-10-17 10:10+0100\n"
+"PO-Revision-Date: 2014-10-17 10:37+0100\n"
+"Last-Translator: gsafer <gsafer@gmail.com>\n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ../../../../views\n"
+
+#: ../../../../views/registro.php:10
+msgid "Registrate en"
+msgstr "Sign up"
+
+#: ../../../../views/registro.php:21
+msgid "El email está ocupado, elige otro."
+msgstr ""
+
+#: ../../../../views/registro.php:24
+msgid "El nick está ocupado, elige otro."
+msgstr ""
+
+#: ../../../../views/registro.php:27
+msgid "El nick debe contener entre 3 y 10 caracteres alfanuméricos."
+msgstr ""
+
+#: ../../../../views/registro.php:30
+msgid "No has escrito un email valido, intentalo con otra dirección."
+msgstr ""
+
+#: ../../../../views/registro.php:33
+msgid "En el nombre y el apellido, sólo se permiten letras de la A-Z."
+msgstr ""
+
+#: ../../../../views/registro.php:36
+msgid "La contraseña debe contener entre 5 y 12 caracteres."
+msgstr ""
+
+#: ../../../../views/registro.php:39
+msgid "No has introducido tu fecha de nacimiento correctamente."
+msgstr ""

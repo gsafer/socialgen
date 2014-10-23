@@ -8,6 +8,21 @@ class Users_model extends CI_Model {
         parent :: __construct();
     }
 
+    public function getUserData($user_id){
+        $sql = "SELECT *
+                FROM users
+                WHERE user_id = " . $user_id . ";";
+
+
+        $res = $this->db->query($sql);
+
+        if($res){
+            return $res->row();
+        } else {
+            return false;
+        }
+    }
+
     public function getUserByNick($nick, $data = false){
         $sql = "SELECT *
                 FROM users

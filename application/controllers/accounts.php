@@ -22,6 +22,27 @@ class Accounts extends MY_Controller {
 		parent :: __construct();
 	}
 
+	public function profile($user_name){
+		$this->load->library("users_lib");
+		$this->load->model("users_model");
+
+		//Verificamos que sea un usuario valido de la plataforma y obtenemos sus datos
+		$check_nick = $this->users_lib->checkNick($user_name);
+		if(!$check_nick) {
+			//Cargamos el perfil del usuario que llega
+			$user_data = $this->users_model->getUserByNick($user_name, true);
+
+			//Configuramos la pagina
+			$this->data->section = 'users';
+			$this->data->page = 'profile';
+
+			$this->load->view('home', $this->data);
+		} else {
+			//El usuario no existe, le mandamos al 404
+			show_404();
+		}
+	}
+
 	public function recoveryPass(){
 		$this->data->email  = $this->input->post('email');
 		$this->load->library("users_lib");
@@ -42,8 +63,9 @@ class Accounts extends MY_Controller {
 	}
 
 	public function logout(){
-		$this->data->login = $this->session->all_userdata();
-		if(isset($this->data->login['logged_in']) && $this->data->login['logged_in'] === true){
+		if($this->checkLogin()){
+			unset($_COOKIE[$this->data_cookie->name]);
+			setcookie($this->data_cookie->name, null, -1, $this->data_cookie->path);
 			$this->session->sess_destroy();
 			$this->goHome();
 		} else {

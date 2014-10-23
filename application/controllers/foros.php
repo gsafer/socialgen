@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends MY_Controller {
+class Foros extends MY_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -17,12 +17,8 @@ class Home extends MY_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index() {	
-		if($this->checkLogin()){
-			$this->load->view('home', $this->data);
-		} else {
-			$this->load->view('login', $this->data);
-		}
+	public function general() {	
+		
 	}
 }
 
