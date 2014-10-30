@@ -7,7 +7,7 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><?=_('Registrate en');?> socialgen.com</h3>
+                        <h3 class="panel-title"><?=_('Registrate en');?> fag.com</h3>
                     </div>
                     <div class="panel-body">
                             <?

@@ -61,7 +61,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <p><small>Copyright © 2014 Socialgen. All Rights Reserved.</small></p>
+            <p><small>Copyright © 2014 Fag. All Rights Reserved.</small></p>
           </div>
           <div class="col-md-6 text-right">
             <p><span class="made-in-atlanta">Made with <i class="fa fa-heart"></i> in Spain</span></p>

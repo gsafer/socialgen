@@ -51,7 +51,7 @@ class Users_lib {
 			$this->CI->load->library('email');
 		    $this->CI->email->clear();
 		    $this->CI->email->to($email);
-		    $this->CI->email->from('no-reply@socialgen.com');
+		    $this->CI->email->from('no-reply@ssssss.com');
 		    $this->CI->email->subject('Restablecer contraseña');
 		    $this->CI->email->message($this->data->mensaje);
 		    $this->CI->email->send();
